@@ -30,6 +30,7 @@
     NSString *path = [[NSBundle mainBundle] pathForResource:@"prettify" ofType:@"html"];
     
     NSError *error = nil;
+    // @todo: 当加载大文件时，会卡住。@clh
     NSString *template = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
     NSString *source = [NSString stringWithContentsOfFile:file encoding:NSUTF8StringEncoding error:&error];
     if (error) {
